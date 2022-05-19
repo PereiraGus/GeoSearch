@@ -31,21 +31,25 @@
             android:text="@string/searchTitle"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="29sp" />
+            android:textSize="25sp"
+            tools:ignore="TextContrastCheck" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="15dp" />
 
-        <TextView
+        <EditText
             android:id="@+id/txtSearchQuery"
             android:layout_width="369dp"
             android:layout_height="48dp"
             android:background="@color/white"
             android:editable="true"
             android:elegantTextHeight="false"
+            android:hint="@string/app_name"
+            android:inputType="textShortMessage"
             android:padding="5dp"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            tools:ignore="TextContrastCheck" />
 
     </LinearLayout>
 
@@ -60,22 +64,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
+        <TextView
+            android:id="@+id/txtMainSubtit1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mainSubtit1"
+            android:textColor="@color/black"
+            android:textSize="34sp" />
+
         <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/txtMainSubtit1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/mainSubtit1"
-                    android:textColor="@color/black"
-                    android:textSize="34sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -87,7 +91,13 @@
                         android:layout_width="150dp"
                         android:layout_height="150dp"
                         android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/br" />
+                        app:srcCompat="@drawable/br"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <Space
+                        android:layout_width="15dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
 
                     <ImageView
                         android:id="@+id/imageView2"
@@ -95,6 +105,11 @@
                         android:layout_height="150dp"
                         android:scaleType="centerCrop"
                         app:srcCompat="@drawable/no" />
+
+                    <Space
+                        android:layout_width="15dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
 
                     <ImageView
                         android:id="@+id/imageView3"
@@ -107,6 +122,66 @@
 
             </LinearLayout>
         </HorizontalScrollView>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </HorizontalScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/mainBtnCur1"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/currency_button"
+                    android:text="Button"
+                    tools:ignore="TextContrastCheck" />
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/mainBtnCur2"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/currency_button"
+                    android:text="Button"
+                    tools:ignore="TextContrastCheck" />
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtMainSubtit2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mainSubtit2"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
 
     </LinearLayout>
 

@@ -10,9 +10,10 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
-    <!--Menu Principal-->    
-        <!--Pesquisa-->
-            <string name="searchTitle">Digite o nome de um país....</string>
+    <!--Menu Principal-->
+    <!--Pesquisa-->
+    <string name="searchTitle">Digite o nome de um país....</string>
+    <string name="searchHint">Insira o nome de um país ou capital</string>
     <string name="mainSubtit1">Sugestões</string>
     <string name="mainSubtit2">Procure por unidades monetárias</string>
 </resources>

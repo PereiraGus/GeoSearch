@@ -5,4 +5,9 @@
     <color name="background">#F5F5F5</color>
     <color name="white">#FFFFFFFF</color>
     <color name="black">#000000</color>
+    <color name="purple_200">#F68865</color>
+    <color name="purple_500">#F68865</color>
+    <color name="purple_700">#F68865</color>
+    <color name="teal_200">#F68865</color>
+    <color name="teal_700">#F68865</color>
 </resources>
