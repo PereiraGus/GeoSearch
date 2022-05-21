@@ -14,7 +14,7 @@
         android:theme="@style/Theme.GeoSearch"
         tools:targetApi="31">
         <activity
-            android:name=".test"
+            android:name=".profileActivity"
             android:exported="false" />
         <activity
             android:name=".MainMenu"

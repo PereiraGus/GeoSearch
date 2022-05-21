@@ -14,6 +14,18 @@
     <!--Pesquisa-->
     <string name="searchTitle">Digite o nome de um país....</string>
     <string name="searchHint">Insira o nome de um país ou capital</string>
+    <string name="searchQueryHint">Digite aqui</string>
     <string name="mainSubtit1">Sugestões</string>
+    <string name="mainDescContryImg">Imagem de país</string>
     <string name="mainSubtit2">Procure por unidades monetárias</string>
+
+    <!--Perfil-->
+    <string name="profName">Nome</string>
+    <string name="profLoc">📍País</string>
+    <string name="profDescImg">Foto de perfil</string>
+    <string name="profAlter">Alterar</string>
+    <string name="profSubtit">Países salvos:</string>
+    <string name="profDescContDf">País</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

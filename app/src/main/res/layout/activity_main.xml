@@ -26,12 +26,12 @@
 
         <TextView
             android:id="@+id/txtSearchTitle"
-            android:layout_width="match_parent"
+            android:layout_width="386dp"
             android:layout_height="wrap_content"
             android:text="@string/searchTitle"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="25sp"
+            android:textSize="30sp"
             tools:ignore="TextContrastCheck" />
 
         <Space
@@ -42,10 +42,11 @@
             android:id="@+id/txtSearchQuery"
             android:layout_width="369dp"
             android:layout_height="48dp"
+            android:autofillHints=""
             android:background="@color/white"
-            android:editable="true"
             android:elegantTextHeight="false"
-            android:hint="@string/app_name"
+            android:hint="@string/searchQueryHint"
+            android:importantForAutofill="no"
             android:inputType="textShortMessage"
             android:padding="5dp"
             android:textSize="25sp"
@@ -55,12 +56,12 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="0dp"
+        android:layout_height="413dp"
         android:orientation="vertical"
-        android:paddingHorizontal="10dp"
+        android:paddingHorizontal="20dp"
         android:paddingVertical="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
@@ -90,6 +91,7 @@
                         android:id="@+id/imageView"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
+                        android:contentDescription="@string/mainDescContryImg"
                         android:scaleType="centerCrop"
                         app:srcCompat="@drawable/br"
                         tools:ignore="ImageContrastCheck" />
@@ -103,6 +105,7 @@
                         android:id="@+id/imageView2"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
+                        android:contentDescription="@string/mainDescContryImg"
                         android:scaleType="centerCrop"
                         app:srcCompat="@drawable/no" />
 
@@ -115,6 +118,7 @@
                         android:id="@+id/imageView3"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
+                        android:contentDescription="@string/mainDescContryImg"
                         android:scaleType="centerCrop"
                         app:srcCompat="@drawable/mk" />
 
@@ -127,54 +131,6 @@
             android:layout_width="match_parent"
             android:layout_height="20dp" />
 
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </HorizontalScrollView>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/mainBtnCur1"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/currency_button"
-                    android:text="Button"
-                    tools:ignore="TextContrastCheck" />
-
-                <Space
-                    android:layout_width="15dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-                <Button
-                    android:id="@+id/mainBtnCur2"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/currency_button"
-                    android:text="Button"
-                    tools:ignore="TextContrastCheck" />
-
-                <Space
-                    android:layout_width="15dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
         <TextView
             android:id="@+id/txtMainSubtit2"
             android:layout_width="match_parent"
@@ -182,6 +138,55 @@
             android:text="@string/mainSubtit2"
             android:textColor="@color/black"
             android:textSize="24sp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/mainBtnCur1"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/currency_button"
+                        android:text="$"
+                        android:textSize="50sp"
+                        tools:ignore="TextContrastCheck" />
+
+                    <Space
+                        android:layout_width="15dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/mainBtnCur2"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/currency_button"
+                        android:text="$"
+                        android:textSize="50sp"
+                        tools:ignore="TextContrastCheck" />
+
+                    <Space
+                        android:layout_width="15dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </HorizontalScrollView>
 
     </LinearLayout>
 
