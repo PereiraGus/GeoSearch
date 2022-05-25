@@ -56,7 +56,7 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="413dp"
+        android:layout_height="444dp"
         android:orientation="vertical"
         android:paddingHorizontal="20dp"
         android:paddingVertical="10dp"
@@ -189,5 +189,14 @@
         </HorizontalScrollView>
 
     </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/menuPlaceholder"
+        android:layout_width="fill_parent"
+        android:layout_height="110dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
