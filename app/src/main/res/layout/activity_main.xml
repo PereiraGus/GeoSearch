@@ -159,6 +159,7 @@
                         android:layout_height="150dp"
                         android:layout_weight="1"
                         android:background="@drawable/currency_button"
+                        android:onClick="goToProfile"
                         android:text="$"
                         android:textSize="50sp"
                         tools:ignore="TextContrastCheck" />
