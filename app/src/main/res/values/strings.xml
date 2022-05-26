@@ -26,9 +26,35 @@
     <string name="profAlter">Alterar</string>
     <string name="profSubtit">Países salvos:</string>
     <string name="profDescContDf">País</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="profTutorial">Cadastre-se para criar sua coleção de países</string>
+    <string name="profEnter">Entrar</string>
+    <string name="profSignIn">Criar perfil</string>
 
     <!--Mapa-->
     <string name="mapGuide">Clique em um país para visualizar suas informações</string>
+
+    <!--Página do país: Cabeçalho-->
+    <string name="ctBtnSave">Salvar</string>
+    <string name="ctCapital">Capital:</string>
+    <string name="ctLangs">Idiomas:</string>
+    <string name="ctHSI">IDH:</string>
+
+    <string name="ctSubPopulation">População</string>
+    <string name="ctDemoDesi">Densidade demográfica:</string>
+    <string name="ctLifeExpect">Expectativa de vida:</string>
+
+    <string name="ctSubFisiology">Fisiologia</string>
+    <string name="ctRegion">Região:</string>
+    <string name="ctTotalArea">Área total:</string>
+
+    <string name="ctSubCategory">Categoria</string>
+    <string name="ctCurrency">Moeda:</string>
+    <string name="ctGDPBrute">PIB Bruto:</string>
+    <string name="ctGDPCapita">PIB Per capita:</string>
+
+    <string name="ctSubMapa">Mapa</string>
+
+    <string name="ctSubHistory">Breve histórico:</string>
+
 </resources>
