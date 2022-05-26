@@ -20,7 +20,7 @@
             android:name=".profileActivity"
             android:exported="false" />
         <activity
-            android:name=".MainMenu"
+            android:name=".mainMenu"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
