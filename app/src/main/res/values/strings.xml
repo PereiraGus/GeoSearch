@@ -38,6 +38,7 @@
     <string name="ctBtnSave">Salvar</string>
     <string name="ctCapital">Capital:</string>
     <string name="ctLangs">Idiomas:</string>
+    <string name="ctTotalPop">População total:</string>
     <string name="ctHSI">IDH:</string>
 
     <string name="ctSubPopulation">População</string>
