@@ -53,28 +53,52 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="25dp">
 
             <ImageView
                 android:id="@+id/imgCtFlag"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="110dp"
+                android:layout_height="122dp"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/br" />
 
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <LinearLayout
+                android:layout_width="140dp"
+                android:layout_height="fill_parent"
                 android:layout_weight="1"
-                android:text="@string/ctCapital"
-                android:textSize="50sp" />
+                android:orientation="vertical"
+                android:paddingHorizontal="10dp">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Brasil"
+                    android:textSize="45sp" />
+
+                <Button
+                    android:id="@+id/btnSave"
+                    android:layout_width="fill_parent"
+                    android:layout_height="80dp"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/secondColor"
+                    android:text="@string/ctBtnSave"
+                    android:textSize="23sp"
+                    app:cornerRadius="0dp" />
+            </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
