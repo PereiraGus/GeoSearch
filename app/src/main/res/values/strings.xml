@@ -43,19 +43,24 @@
 
     <string name="ctSubPopulation">População</string>
     <string name="ctDemoDesi">Densidade demográfica:</string>
+    <string name="ctPopRuralXUrban">População Rural X Urbana:</string>
     <string name="ctLifeExpect">Expectativa de vida:</string>
 
     <string name="ctSubFisiology">Fisiologia</string>
     <string name="ctRegion">Região:</string>
     <string name="ctTotalArea">Área total:</string>
 
-    <string name="ctSubCategory">Categoria</string>
+    <string name="ctSubEconomy">Economia</string>
     <string name="ctCurrency">Moeda:</string>
     <string name="ctGDPBrute">PIB Bruto:</string>
     <string name="ctGDPCapita">PIB Per capita:</string>
 
-    <string name="ctSubMapa">Mapa</string>
+    <string name="ctSubMap">Mapa</string>
 
     <string name="ctSubHistory">Breve histórico:</string>
+    <string name="title_activity_example">example</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 
 </resources>
