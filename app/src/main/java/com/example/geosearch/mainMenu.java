@@ -13,11 +13,5 @@ public class mainMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        showMenuBar();
-    }
-    public void showMenuBar() {
-        menubar menuBar = menubar.newInstance();
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.add(R.id.menuPlaceholder,menuBar).addToBackStack(null).commit();
     }
 }
