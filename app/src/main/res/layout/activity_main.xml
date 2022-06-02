@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        style="@style/Theme.GeoSearch"
+        android:layout_width="fill_parent"
+        android:layout_height="180dp"
+        android:background="@color/firstColor"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+        <TextView
+            android:id="@+id/txtSearchTitle"
+            android:layout_width="386dp"
+            android:layout_height="wrap_content"
+            android:text="@string/searchTitle"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            tools:ignore="TextContrastCheck" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <EditText
+            android:id="@+id/txtSearchQuery"
+            android:layout_width="369dp"
+            android:layout_height="48dp"
+            android:autofillHints=""
+            android:background="@color/white"
+            android:elegantTextHeight="false"
+            android:hint="@string/searchQueryHint"
+            android:importantForAutofill="no"
+            android:inputType="textShortMessage"
+            android:padding="5dp"
+            android:textSize="25sp"
+            tools:ignore="TextContrastCheck" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="fill_parent"
+        android:layout_height="444dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/txtMainSubtit1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mainSubtit1"
+            android:textColor="@color/black"
+            android:textSize="34sp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:contentDescription="@string/mainDescContryImg"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/br"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <Space
+                        android:layout_width="15dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:contentDescription="@string/mainDescContryImg"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/no" />
+
+                    <Space
+                        android:layout_width="15dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:contentDescription="@string/mainDescContryImg"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/mk" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:id="@+id/txtMainSubtit2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mainSubtit2"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/mainBtnCur1"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/currency_button"
+                        android:onClick="goToProfile"
+                        android:text="$"
+                        android:textSize="50sp"
+                        tools:ignore="TextContrastCheck" />
+
+                    <Space
+                        android:layout_width="15dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/mainBtnCur2"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/currency_button"
+                        android:text="$"
+                        android:textSize="50sp"
+                        tools:ignore="TextContrastCheck" />
+
+                    <Space
+                        android:layout_width="15dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="fill_parent"
+        android:layout_height="110dp"
+        android:layout_marginTop="11dp"
+        android:background="@color/firstColor"
+        app:itemIconSize="45dp"
+        app:itemIconTint="@color/secondColor"
+        app:itemTextColor="@color/secondColor"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintVertical_bias="1.0"
+        app:menu="@menu/menu_main" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

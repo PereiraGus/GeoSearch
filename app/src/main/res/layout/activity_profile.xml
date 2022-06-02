@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".profileActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        style="@style/Theme.GeoSearch"
+        android:layout_width="match_parent"
+        android:layout_height="277dp"
+        android:background="@color/firstColor"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:contentDescription="@string/profDescImg"
+                tools:ignore="ImageContrastCheck"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/profName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="15"
+                    android:text="@string/profName"
+                    android:textColor="@color/white"
+                    android:textSize="35sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/profLoc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/profLoc"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <Button
+                    android:id="@+id/profBtnAlter"
+                    android:layout_width="fill_parent"
+                    android:layout_height="80dp"
+                    android:backgroundTint="@color/secondColor"
+                    android:text="@string/profAlter"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutLogin"
+        android:layout_width="fill_parent"
+        android:layout_height="327dp"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/profSubtit"
+            android:textColor="@color/black"
+            android:textSize="34sp" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:isScrollContainer="true">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp">
+
+                <ImageView
+                    android:id="@+id/profImg1"
+                    android:layout_width="170dp"
+                    android:layout_height="120dp"
+                    android:contentDescription="@string/profDescContDf"
+                    app:srcCompat="@drawable/br"
+                    tools:ignore="ImageContrastCheck" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/profImg2"
+                    android:layout_width="170dp"
+                    android:layout_height="120dp"
+                    android:contentDescription="@string/profDescContDf"
+                    app:srcCompat="@drawable/br"
+                    tools:ignore="ImageContrastCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp">
+
+                <ImageView
+                    android:id="@+id/profImg3"
+                    android:layout_width="170dp"
+                    android:layout_height="120dp"
+                    android:contentDescription="@string/profDescContDf"
+                    app:srcCompat="@drawable/br"
+                    tools:ignore="ImageContrastCheck" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/profImg4"
+                    android:layout_width="170dp"
+                    android:layout_height="120dp"
+                    android:contentDescription="@string/profDescContDf"
+                    app:srcCompat="@drawable/br"
+                    tools:ignore="ImageContrastCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp">
+
+                <ImageView
+                    android:id="@+id/profImg5"
+                    android:layout_width="170dp"
+                    android:layout_height="120dp"
+                    android:contentDescription="@string/profDescContDf"
+                    app:srcCompat="@drawable/br" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/profImg6"
+                    android:layout_width="170dp"
+                    android:layout_height="120dp"
+                    android:contentDescription="@string/profDescContDf"
+                    app:srcCompat="@drawable/br" />
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="130dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutNoLogin"
+        android:layout_width="fill_parent"
+        android:layout_height="327dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🏁"
+            android:textAlignment="center"
+            android:textSize="60sp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="254dp"
+            android:layout_height="wrap_content"
+            android:text="@string/profTutorial"
+            android:textAlignment="center"
+            android:textColor="@color/firstColor"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="250dp"
+            android:layout_height="80dp"
+            android:backgroundTint="@color/background"
+            android:text="@string/profEnter"
+            android:textColor="@color/secondColor"
+            android:textSize="28sp"
+            app:cornerRadius="4dp"
+            app:strokeColor="@color/secondColor"
+            app:strokeWidth="3dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/firstColor"
+            android:orientation="vertical"></LinearLayout>
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="250dp"
+            android:layout_height="80dp"
+            android:backgroundTint="@color/background"
+            android:text="@string/profSignIn"
+            android:textColor="@color/secondColor"
+            android:textSize="28sp"
+            app:cornerRadius="4dp"
+            app:strokeColor="@color/secondColor"
+            app:strokeWidth="3dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

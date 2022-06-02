@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.geosearch.MainActivity">
+    <item
+        android:id="@string/itemIDHome"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/itemHome" />
+    <item
+        android:id="@string/itemIDMap"
+        android:icon="@drawable/ic_baseline_map_24"
+        android:title="@string/itemMap" />
+    <item
+        android:id="@string/itemIDProf"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="@string/itemProf" />
+</menu>

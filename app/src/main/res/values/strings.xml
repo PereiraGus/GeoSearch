@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">GeoSearch</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <!--Menu Principal-->
+    <!--Pesquisa-->
+    <string name="searchTitle">Digite o nome de um país....</string>
+    <string name="searchHint">Insira o nome de um país ou capital</string>
+    <string name="searchQueryHint">Digite aqui</string>
+    <string name="mainSubtit1">Sugestões</string>
+    <string name="mainDescContryImg">Imagem de país</string>
+    <string name="mainSubtit2">Procure por unidades monetárias</string>
+
+    <!--Perfil-->
+    <string name="profName">Nome</string>
+    <string name="profLoc">📍País</string>
+    <string name="profDescImg">Foto de perfil</string>
+    <string name="profAlter">Alterar</string>
+    <string name="profSubtit">Países salvos:</string>
+    <string name="profDescContDf">País</string>
+
+    <string name="profTutorial">Cadastre-se para criar sua coleção de países</string>
+    <string name="profEnter">Entrar</string>
+    <string name="profSignIn">Criar perfil</string>
+
+    <!--Mapa-->
+    <string name="mapGuide">Clique em um país para visualizar suas informações</string>
+
+    <!--Página do país: Cabeçalho-->
+    <string name="ctBtnSave">Salvar</string>
+    <string name="ctCapital">Capital:</string>
+    <string name="ctLangs">Idiomas:</string>
+    <string name="ctTotalPop">População total:</string>
+    <string name="ctHSI">IDH:</string>
+
+    <string name="ctSubPopulation">População</string>
+    <string name="ctDemoDesi">Densidade demográfica:</string>
+    <string name="ctPopRuralXUrban">População Rural X Urbana:</string>
+    <string name="ctLifeExpect">Expectativa de vida:</string>
+
+    <string name="ctSubFisiology">Fisiologia</string>
+    <string name="ctRegion">Região:</string>
+    <string name="ctTotalArea">Área total:</string>
+
+    <string name="ctSubEconomy">Economia</string>
+    <string name="ctCurrency">Moeda:</string>
+    <string name="ctGDPBrute">PIB Bruto:</string>
+    <string name="ctGDPCapita">PIB Per capita:</string>
+
+    <string name="ctSubMap">Mapa</string>
+
+    <string name="ctSubHistory">Breve histórico:</string>
+    <string name="title_activity_example">example</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <!--Itens do menu-!-->
+    <string name="itemIDHome">itemHome</string>
+    <string name="itemIDMap">itemMap</string>
+    <string name="itemIDProf">itemProf</string>
+
+    <string name="itemHome">Principal</string>
+    <string name="itemMap">Mapa</string>
+    <string name="itemProf">Perfil</string>
+
+</resources>
