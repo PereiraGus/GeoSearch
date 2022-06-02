@@ -63,4 +63,13 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 
+    <!--Itens do menu-!-->
+    <string name="itemIDHome">itemHome</string>
+    <string name="itemIDMap">itemMap</string>
+    <string name="itemIDProf">itemProf</string>
+
+    <string name="itemHome">Principal</string>
+    <string name="itemMap">Mapa</string>
+    <string name="itemProf">Perfil</string>
+
 </resources>
