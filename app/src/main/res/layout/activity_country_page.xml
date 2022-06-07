@@ -68,7 +68,7 @@
                     android:id="@+id/textView10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/ctHSI"
+                    android:text="@string/ctHDI"
                     android:textColor="@color/black"
                     android:textSize="30sp" />
             </LinearLayout>
@@ -99,12 +99,20 @@
                     android:id="@+id/textView14"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/ctPopRuralXUrban"
+                    android:text="@string/ctPopRural"
                     android:textColor="@color/black"
                     android:textSize="30sp" />
 
                 <TextView
                     android:id="@+id/textView15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ctPopUrban"
+                    android:textColor="@color/black"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/textView16"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/ctDemoDesi"

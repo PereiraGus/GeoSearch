@@ -1,5 +1,6 @@
 package com.example.geosearch;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -70,5 +71,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(
                 "drop table if exists tbSaveCounts;");
         onCreate(db);
+    }
+
+    public boolean insertCountry (country c)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cont = new ContentValues();
+        cont.put(COUNTRY_COLUMN_NAME, c.)
     }
 }

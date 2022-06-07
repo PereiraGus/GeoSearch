@@ -34,16 +34,20 @@
     <!--Mapa-->
     <string name="mapGuide">Clique em um país para visualizar suas informações</string>
 
-    <!--Página do país: Cabeçalho-->
+    <!--Página do país e JSON-->
+    <string name="ctName">Nome:</string>
+    <string name="ctInit">Abreviação:</string>
+
     <string name="ctBtnSave">Salvar</string>
     <string name="ctCapital">Capital:</string>
     <string name="ctLangs">Idiomas:</string>
     <string name="ctTotalPop">População total:</string>
-    <string name="ctHSI">IDH:</string>
+    <string name="ctHDI">IDH:</string>
 
     <string name="ctSubPopulation">População</string>
     <string name="ctDemoDesi">Densidade demográfica:</string>
-    <string name="ctPopRuralXUrban">População Rural X Urbana:</string>
+    <string name="ctPopRural">População Rural:</string>
+    <string name="ctPopUrban">População Urbana:</string>
     <string name="ctLifeExpect">Expectativa de vida:</string>
 
     <string name="ctSubFisiology">Fisiologia</string>
