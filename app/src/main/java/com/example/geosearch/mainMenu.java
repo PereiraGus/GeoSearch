@@ -6,10 +6,14 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.concurrent.ExecutionException;
+import java.util.logging.Logger;
 
 public class mainMenu extends AppCompatActivity {
 
@@ -26,12 +30,18 @@ public class mainMenu extends AppCompatActivity {
                 switch(item.getItemId())
                 {
                     case R.id.btnBarHome:
-                        Intent intentH = new Intent(getApplicationContext(), mainMenu.class);
-                        startActivity(intentH);
+                            Intent intentH = new Intent(getApplicationContext(), mainMenu.class);
+                            startActivity(intentH);
                         return true;
                     case R.id.btnBarMap:
+                        try {
                         Intent intentM = new Intent(getApplicationContext(), selectionMap.class);
                         startActivity(intentM);
+                        }
+                                catch(Exception e)
+                        {
+                            e.printStackTrace();
+                        }
                         return true;
                     case R.id.btnBarProf:
                         Intent intentP = new Intent(getApplicationContext(), profileActivity.class);
@@ -41,5 +51,17 @@ public class mainMenu extends AppCompatActivity {
                 return false;
             }
         });
+
+        String respAPI = null;
+        SegundoPlano segundoPlano = new SegundoPlano();
+        try {
+            respAPI = segundoPlano.execute().get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        Log.d("Resultado:",respAPI);
     }
 }

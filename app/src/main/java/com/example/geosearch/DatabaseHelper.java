@@ -73,10 +73,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertCountry (country c)
+    /*public boolean insertCountry (country c)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cont = new ContentValues();
         cont.put(COUNTRY_COLUMN_NAME, c.)
-    }
+    }*/
 }
