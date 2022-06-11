@@ -55,11 +55,12 @@ public class mainMenu extends AppCompatActivity {
         txtSearch.setOnEditorActionListener(new TextView.OnEditorActionListener(){
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == KeyEvent.KEYCODE_ENTER) {
-                    Bundle dataBundle = new Bundle();
-                    dataBundle.putString("query",txtSearch.getText().toString());
-                    Intent intent = new Intent(getApplicationContext(), searchResult.class);
-                    intent.putExtras(dataBundle);
+                if (actionId == EditorInfo.IME_ACTION_SEARCH
+                        || actionId == EditorInfo.IME_ACTION_DONE
+                        || event.getAction() == KeyEvent.ACTION_DOWN
+                        && event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+                    Intent intent = new Intent(getApplicationContext(), countryPage.class);
+                    intent.putExtra("query",txtSearch.getText().toString());
                     startActivity(intent);
                     return true;
                 }
