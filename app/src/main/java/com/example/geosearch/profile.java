@@ -28,11 +28,29 @@ public class profile implements Serializable {
         this.set_isLogged(_isLogged);
     }
 
+    public int get_id() {return _id;}
     public void set_id(int id) { this._id = id; }
+
+    public String get_name() {
+        return _name;
+    }
     public void set_name(String name) { this._name = name; }
+
+    public String get_count() {
+        return _count;
+    }
     public void set_count(String count) { this._count = count; }
+
+    public String get_passw() {
+        return _passw;
+    }
     public void set_passw(String passw) { this._passw = passw; }
+
+    public int get_isLogged() {
+        return _isLogged;
+    }
     public void set_isLogged(int isLogged) { this._isLogged = isLogged; }
+
 
     public JSONObject profileJSON (){
         JSONObject obj = new JSONObject();

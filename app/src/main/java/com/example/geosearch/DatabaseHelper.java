@@ -2,6 +2,7 @@ package com.example.geosearch;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -73,10 +74,45 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    /*public boolean insertCountry (country c)
+    public boolean insertUser (profile c){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues content = new ContentValues();
+        content.put(USER_COLUMN_NAME, c.get_name());
+        content.put(USER_COLUMN_COUNTRY, c.get_count());
+        content.put(USER_COLUMN_PASSWORD, c.get_passw());
+        content.put(USER_COLUMN_ISLOGGED, c.get_isLogged());
+        db.insert(USER_TABLE_NAME, null, content);
+        return true;
+    }
+
+    public boolean saveCountry (country c, profile p)
     {
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues cont = new ContentValues();
-        cont.put(COUNTRY_COLUMN_NAME, c.)
-    }*/
+        ContentValues contentC = new ContentValues();
+        contentC.put(COUNTRY_COLUMN_NAME, c.get_name());
+        contentC.put(COUNTRY_COLUMN_INIT, c.get_init());
+        contentC.put(COUNTRY_COLUMN_CAPITAL, c.get_capital());
+        contentC.put(COUNTRY_COLUMN_POP, c.get_pop());
+        contentC.put(COUNTRY_COLUMN_DENSPOP, c.get_dens());
+        contentC.put(COUNTRY_COLUMN_HDI, c.get_hdi());
+        contentC.put(COUNTRY_COLUMN_RURALPOP, c.get_ruralPop());
+        contentC.put(COUNTRY_COLUMN_URBANPOP, c.get_urbanPop());
+        contentC.put(COUNTRY_COLUMN_LIFEEXPEC, c.get_lifeExpec());
+        contentC.put(COUNTRY_COLUMN_TOTAREA, c.get_totalArea());
+        contentC.put(COUNTRY_COLUMN_BRUTEGDP, c.get_bruteGDP());
+        contentC.put(COUNTRY_COLUMN_CAPITAGDP, c.get_capitaGDP());
+        contentC.put(COUNTRY_COLUMN_HIST, c.get_hist());
+        contentC.put(COUNTRY_COLUMN_CURRENCY, c.get_crrc());
+        contentC.put(COUNTRY_COLUMN_REGION, c.get_region());
+        contentC.put(COUNTRY_COLUMN_LANG, c.get_lang());
+        db.insert(COUNTRY_TABLE_NAME, null, contentC);
+
+        Cursor latest = db.rawQuery("select * from tbCountry order by idCount desc limit 1;",null);
+        Cursor loggedUser = db.rawQuery("select * from tbUser where (islogged = 1)",null);
+        ContentValues contentP = new ContentValues();
+        contentP.put(SAVECOUNTS_COLUMN_IDCOUNT, latest.toString());
+        contentP.put(SAVECOUNTS_COLUMN_IDUSU, loggedUser.toString());
+        db.insert(SAVECOUNTS_TABLE_NAME, null, contentP);
+        return true;
+    }
 }

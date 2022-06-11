@@ -57,53 +57,120 @@ public class country implements Serializable
         this.set_lang(lang);
     }
 
+    public int get_id() {
+        return _id;
+    }
     public void set_id(int id) {
         this._id = id;
+    }
+
+    public String get_name() {
+        return _name;
     }
     public void set_name(String name) {
         this._name = name;
     }
+
+    public String get_init() {
+        return _init;
+    }
     public void set_init(String init) {
         this._init = init;
+    }
+
+    public String get_capital() {
+        return _capital;
     }
     public void set_capital(String capital) {
         this._capital = capital;
     }
+
+    public int get_pop() {
+        return _pop;
+    }
     public void set_pop(int pop) {
         this._pop = pop;
+    }
+
+    public String get_dens() {
+        return _dens;
     }
     public void set_dens(String dens) {
         this._dens = dens;
     }
+
+    public String get_hdi() {
+        return _hdi;
+    }
     public void set_hdi(String hdi) {
         this._hdi = hdi;
+    }
+
+    public String get_ruralPop() {
+        return _ruralPop;
     }
     public void set_ruralPop(String ruralPop) {
         this._ruralPop = ruralPop;
     }
+
+    public String get_urbanPop() {
+        return _urbanPop;
+    }
     public void set_urbanPop(String urbanPop) {
         this._urbanPop = urbanPop;
+    }
+
+    public int get_lifeExpec() {
+        return _lifeExpec;
     }
     public void set_lifeExpec(int lifeExpec) {
         this._lifeExpec = lifeExpec;
     }
+
+    public String get_totalArea() {
+        return _totalArea;
+    }
     public void set_totalArea(String totalArea) {
         this._totalArea = totalArea;
+    }
+
+    public String get_bruteGDP() {
+        return _bruteGDP;
     }
     public void set_bruteGDP(String bruteGDP) {
         this._bruteGDP = bruteGDP;
     }
+
+    public String get_capitaGDP() {
+        return _capitaGDP;
+    }
     public void set_capitaGDP(String capitaGDP) {
         this._capitaGDP = capitaGDP;
+    }
+
+    public String get_hist() {
+        return _hist;
     }
     public void set_hist(String hist) {
         this._hist = hist;
     }
+
+    public String get_crrc() {
+        return _crrc;
+    }
     public void set_crrc(String crrc) {
         this._crrc = crrc;
     }
+
+    public String get_region() {
+        return _region;
+    }
     public void set_region(String region) {
         this._region = region;
+    }
+
+    public String get_lang() {
+        return _lang;
     }
     public void set_lang(String lang) {
         this._lang = lang;
