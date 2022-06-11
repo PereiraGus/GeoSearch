@@ -85,7 +85,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return true;
     }
 
-    public boolean saveCountry (country c, profile p)
+    public boolean insertCountry(country c)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentC = new ContentValues();
@@ -106,13 +106,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentC.put(COUNTRY_COLUMN_REGION, c.get_region());
         contentC.put(COUNTRY_COLUMN_LANG, c.get_lang());
         db.insert(COUNTRY_TABLE_NAME, null, contentC);
-
-        Cursor latest = db.rawQuery("select * from tbCountry order by idCount desc limit 1;",null);
+        return true;
+    }
+    public boolean saveCountry (country c, int idcount)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor country = db.rawQuery("select * from tbCountry where (idCount = idcount) limit 1;",null);
         Cursor loggedUser = db.rawQuery("select * from tbUser where (islogged = 1)",null);
-        ContentValues contentP = new ContentValues();
-        contentP.put(SAVECOUNTS_COLUMN_IDCOUNT, latest.toString());
-        contentP.put(SAVECOUNTS_COLUMN_IDUSU, loggedUser.toString());
-        db.insert(SAVECOUNTS_TABLE_NAME, null, contentP);
+        ContentValues content = new ContentValues();
+        content.put(SAVECOUNTS_COLUMN_IDCOUNT, country.toString());
+        content.put(SAVECOUNTS_COLUMN_IDUSU, loggedUser.toString());
+        db.insert(SAVECOUNTS_TABLE_NAME, null, content);
         return true;
     }
 }

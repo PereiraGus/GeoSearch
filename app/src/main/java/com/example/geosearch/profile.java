@@ -61,8 +61,9 @@ public class profile implements Serializable {
             obj.put(String.valueOf(R.string.profPassw), this._count);
             obj.put("isLogged", this._isLogged);
         }
-        catch(JSONException e)
-        {}
+        catch(JSONException e) {
+            e.printStackTrace();
+        }
         return obj;
     }
 }

@@ -2,26 +2,27 @@ package com.example.geosearch;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.MenuItem;
-import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.concurrent.ExecutionException;
-import java.util.logging.Logger;
 
 public class mainMenu extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        EditText txtSearch = (EditText) findViewById(R.id.txtSearchQuery);
         BottomNavigationView nav = findViewById(R.id.bottomNav);
         nav.setSelectedItemId(R.id.btnBarHome);
         nav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -51,17 +52,19 @@ public class mainMenu extends AppCompatActivity {
                 return false;
             }
         });
-
-        String respAPI = null;
-        SegundoPlano segundoPlano = new SegundoPlano();
-        try {
-            respAPI = segundoPlano.execute().get();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        Log.d("Resultado:",respAPI);
+        txtSearch.setOnEditorActionListener(new TextView.OnEditorActionListener(){
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == KeyEvent.KEYCODE_ENTER) {
+                    Bundle dataBundle = new Bundle();
+                    dataBundle.putString("query",txtSearch.getText().toString());
+                    Intent intent = new Intent(getApplicationContext(), searchResult.class);
+                    intent.putExtras(dataBundle);
+                    startActivity(intent);
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 }

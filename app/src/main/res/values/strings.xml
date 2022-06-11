@@ -35,6 +35,9 @@
     <!--Mapa-->
     <string name="mapGuide">Clique em um país para visualizar suas informações</string>
 
+    <!--Pesquisa-->
+    <string name="searchResults">Resultados para "x":</string>
+
     <!--Página do país e JSON-->
     <string name="ctName">Nome:</string>
     <string name="ctInit">Abreviação:</string>
