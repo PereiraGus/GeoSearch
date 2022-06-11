@@ -22,6 +22,7 @@
     <!--Perfil-->
     <string name="profName">Nome</string>
     <string name="profLoc">📍País</string>
+    <string name="profPassw">Senha</string>
     <string name="profDescImg">Foto de perfil</string>
     <string name="profAlter">Alterar</string>
     <string name="profSubtit">Países salvos:</string>
