@@ -17,22 +17,22 @@ import java.util.Scanner;
 
 public class networkUtils {
     private static final String LOG_TAG = networkUtils.class.getSimpleName();
-    private static final String URL_COUNTRY = "https://servicodados.ibge.gov.br/api/v1/paises/";
+    private static final String URL_COUNTRY = "https://servicodados.ibge.gov.br/api/v1/paises";
     private static final String COUNTRY_QUERY = "/";
-
+    String countryJSON = null;
+    static String url = null;
     static String searchCountry(String query) {
         HttpURLConnection conexao = null;
         BufferedReader reader = null;
         String countryJSON = null;
         try {
             Uri buildURI = Uri.parse(URL_COUNTRY).buildUpon()
-                    .appendQueryParameter(COUNTRY_QUERY, query)
+                    .appendPath(query)
                     .build();
             URL requestURL = new URL(buildURI.toString());
+            url = buildURI.toString();
             conexao = (HttpURLConnection) requestURL.openConnection();
             conexao.setRequestMethod("GET");
-            conexao.setDoOutput(true);
-            conexao.setConnectTimeout(3000);
             conexao.connect();
 
             InputStream inputStream = conexao.getInputStream();
@@ -42,7 +42,7 @@ public class networkUtils {
             String line;
             while ((line = reader.readLine()) != null) {
                 builder.append(line);
-                builder.append("\n");
+                builder.append("/n");
             }
             if (builder.length() == 0) {
                 return null;
@@ -59,7 +59,8 @@ public class networkUtils {
         finally {
             conexao.disconnect();
         }
-        Log.d(LOG_TAG, countryJSON);
+        //Log.d("Url da requisição:", url);
+        //Log.d("Dados da requisição:", countryJSON.toString());
         return countryJSON;
     }
 }

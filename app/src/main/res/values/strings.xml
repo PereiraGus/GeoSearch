@@ -39,6 +39,8 @@
     <string name="searchResults">Resultados para "x":</string>
 
     <!--Página do país e JSON-->
+    <string name="ctTitlePlaceholder">Carregando...</string>
+
     <string name="ctName">Nome:</string>
     <string name="ctInit">Abreviação:</string>
 
