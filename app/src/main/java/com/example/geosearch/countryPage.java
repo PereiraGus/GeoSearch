@@ -42,6 +42,8 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
     private TextView txtCrrc;
     private TextView txtGDPB;
     private TextView txtGDPC;
+
+    private TextView txtHist;
     String query = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +51,25 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
         setContentView(R.layout.activity_country_page);
 
         txtName = (TextView) findViewById(R.id.txtCtTitle);
-        //txtPop = (TextView) findViewById(R.id.txtTotPop);
+
+        txtTotPop = (TextView) findViewById(R.id.txtTotPop);
         txtCapital = (TextView) findViewById(R.id.txtCapital);
+        txtLangs = (TextView) findViewById(R.id.txtLangs);
+        txtHDI = (TextView) findViewById(R.id.txtHDI);
+
+        txtDens = (TextView) findViewById(R.id.txtDens);
+        txtPopRural = (TextView) findViewById(R.id.txtPopRural);
+        txtPopUrban = (TextView) findViewById(R.id.txtPopUrban);
+        txtLifeExpec = (TextView) findViewById(R.id.txtLifeExpec);
+
+        txtRegion = (TextView) findViewById(R.id.txtRegion);
+        txtArea = (TextView) findViewById(R.id.txtTotalArea);
+
+        txtCrrc = (TextView) findViewById(R.id.txtCrrc);
+        txtGDPB = (TextView) findViewById(R.id.txtGDPB);
+        txtGDPC = (TextView) findViewById(R.id.txtGDPC);
+
+        txtHist = (TextView) findViewById(R.id.txtHist);
 
         Intent intent = getIntent();
         query = intent.getStringExtra("query");
@@ -103,12 +122,12 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
             JSONArray itemsArray = new JSONArray(data);
             int i = 0;
             String name = null;
-            String totalArea;
-            String region;
+            String totalArea = null;
+            String region = null;
             String langs = null;
             String capitalCity = null;
             String currency = null;
-            String historic;
+            String historic = null;
             while(itemsArray.length() > i)
             {
                 JSONObject country = itemsArray.getJSONObject(i);
@@ -157,7 +176,25 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
                 i++;
             }
             txtName.setText(name);
+
+            //txtTotPop.setText();
             txtCapital.setText(R.string.ctCapital + ": " + capitalCity);
+            txtLangs.setText(R.string.ctLangs + ": " + langs);
+            //txtHDI.setText();
+
+            /*txtDens.setText();
+            txtPopRural.setText();
+            txtPopUrban.setText();
+            txtLifeExpec.setText();*/
+
+            txtRegion.setText(R.string.ctRegion + ": " + region);
+            txtArea.setText(R.string.ctTotalArea + ": " + totalArea);
+
+            txtCrrc.setText(R.string.ctCurrency + ": " + currency);
+            //txtGDPB.setText();
+            //txtGDPC.setText();
+
+            txtHist.setText(historic);
         }
         catch (JSONException e) {
             //FAZER OPÇÃO QUE MOSTRE PARA O USUARIO QUE DEU ERRO
