@@ -7,7 +7,6 @@ import java.io.Serializable;
 
 public class country implements Serializable
 {
-    private int _id;
     private String _name;
     private String _init;
     private String _capital;
@@ -16,7 +15,7 @@ public class country implements Serializable
     private String _hdi;
     private String _ruralPop;
     private String _urbanPop;
-    private int _lifeExpec;
+    private String _lifeExpec;
     private String _totalArea;
     private String _bruteGDP;
     private String _capitaGDP;
@@ -27,18 +26,16 @@ public class country implements Serializable
 
     public country (){}
 
-    public country(int id, String name)
+    public country(String name)
     {
-        this.set_id(id);
         this.set_name(name);
     }
 
-    public country (int id, String name, String init, String capital, int pop, String dens,
-                    String hdi, String ruralPop, String urbanPop, int lifeExpec, String totalArea,
+    public country (String name, String init, String capital, int pop, String dens,
+                    String hdi, String ruralPop, String urbanPop, String lifeExpec, String totalArea,
                     String bruteGDP, String capitaGDP, String hist, String crrc, String region,
                     String lang)
     {
-        this.set_id(id);
         this.set_name(name);
         this.set_init(init);
         this.set_capital(capital);
@@ -56,14 +53,6 @@ public class country implements Serializable
         this.set_region(region);
         this.set_lang(lang);
     }
-
-    public int get_id() {
-        return _id;
-    }
-    public void set_id(int id) {
-        this._id = id;
-    }
-
     public String get_name() {
         return _name;
     }
@@ -120,10 +109,10 @@ public class country implements Serializable
         this._urbanPop = urbanPop;
     }
 
-    public int get_lifeExpec() {
+    public String get_lifeExpec() {
         return _lifeExpec;
     }
-    public void set_lifeExpec(int lifeExpec) {
+    public void set_lifeExpec(String lifeExpec) {
         this._lifeExpec = lifeExpec;
     }
 
@@ -179,7 +168,6 @@ public class country implements Serializable
     public JSONObject countryJSON (){
         JSONObject obj = new JSONObject();
         try{
-            obj.put("ID:", this._id);
             obj.put(String.valueOf(R.string.ctName), this._name);
             obj.put(String.valueOf(R.string.ctInit), this._init);
             obj.put(String.valueOf(R.string.ctCapital), this._capital);

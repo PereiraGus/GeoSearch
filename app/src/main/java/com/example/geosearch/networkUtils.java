@@ -102,7 +102,6 @@ public class networkUtils {
         }
         Bundle fullData = new Bundle();
         fullData.putString("socioEco",socioEcoJSON);
-
         fullData.putString("country",countryJSON);
         return fullData;
     }

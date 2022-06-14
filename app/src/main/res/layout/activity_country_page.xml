@@ -26,14 +26,6 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/imgCtFlag"
-                    android:layout_width="110dp"
-                    android:layout_height="122dp"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/br"
-                    tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -41,13 +33,23 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
+                <Button
+                    android:id="@+id/btnSave"
+                    android:layout_width="200dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/secondColor"
+                    android:clickable="true"
+                    android:text="@string/ctBtnSave"
+                    app:cornerRadius="0dp" />
+
                 <TextView
                     android:id="@+id/txtTotPop"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/ctTotalPop"
                     android:textColor="@color/black"
-                    android:textSize="30sp" />
+                    android:textSize="25sp" />
 
                 <TextView
                     android:id="@+id/txtCapital"
@@ -55,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/ctCapital"
                     android:textColor="@color/black"
-                    android:textSize="30sp" />
+                    android:textSize="25sp" />
 
                 <TextView
                     android:id="@+id/txtLangs"
@@ -63,7 +65,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/ctLangs"
                     android:textColor="@color/black"
-                    android:textSize="30sp" />
+                    android:textSize="25sp" />
 
                 <TextView
                     android:id="@+id/txtHDI"
@@ -71,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/ctHDI"
                     android:textColor="@color/black"
-                    android:textSize="30sp" />
+                    android:textSize="25sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -94,7 +96,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/ctDemoDesi"
                     android:textColor="@color/black"
-                    android:textSize="30sp" />
+                    android:textSize="25sp" />
 
                 <TextView
                     android:id="@+id/txtPopRural"
@@ -102,7 +104,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/ctPopRural"
                     android:textColor="@color/black"
-                    android:textSize="30sp" />
+                    android:textSize="25sp" />
 
                 <TextView
                     android:id="@+id/txtPopUrban"
@@ -110,7 +112,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/ctPopUrban"
                     android:textColor="@color/black"
-                    android:textSize="30sp" />
+                    android:textSize="25sp" />
 
                 <TextView
                     android:id="@+id/txtLifeExpec"
@@ -118,7 +120,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/ctLifeExpect"
                     android:textColor="@color/black"
-                    android:textSize="30sp" />
+                    android:textSize="25sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -141,7 +143,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/ctRegion"
                     android:textColor="@color/black"
-                    android:textSize="30sp" />
+                    android:textSize="25sp" />
 
                 <TextView
                     android:id="@+id/txtTotalArea"
@@ -149,7 +151,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/ctTotalArea"
                     android:textColor="@color/black"
-                    android:textSize="30sp" />
+                    android:textSize="25sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -172,7 +174,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/ctCurrency"
                     android:textColor="@color/black"
-                    android:textSize="30sp" />
+                    android:textSize="25sp" />
 
                 <TextView
                     android:id="@+id/txtGDPB"
@@ -180,7 +182,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/ctGDPBrute"
                     android:textColor="@color/black"
-                    android:textSize="30sp" />
+                    android:textSize="25sp" />
 
                 <TextView
                     android:id="@+id/txtGDPC"
@@ -188,7 +190,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/ctGDPCapita"
                     android:textColor="@color/black"
-                    android:textSize="30sp" />
+                    android:textSize="25sp" />
 
             </LinearLayout>
 
