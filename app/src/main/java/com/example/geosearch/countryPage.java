@@ -10,7 +10,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.GoogleMap;
@@ -22,10 +26,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.URI;
+import java.net.URL;
 import java.util.Calendar;
 
-public class countryPage extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Bundle>,
-        OnMapReadyCallback {
+public class countryPage extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Bundle>{
+    private static final String URL_MAPS = "https://www.google.com/maps/place";
+
     private TextView txtName;
 
     private TextView txtTotPop;
@@ -80,18 +87,17 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
         if(getSupportLoaderManager().getLoader(0) != null){
             getSupportLoaderManager().initLoader(0,null,this);
         }
-
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.mapCountryBase);
-        mapFragment.getMapAsync(this);
-
         fetchCountry();
     }
 
-    @Override
-    public void onMapReady(@NonNull GoogleMap googleMap) {
-        /*googleMap.addMarker(new MarkerOptions()
-                .location)*/
+    public void loadMap(String ctCod){
+        WebView map = (WebView) findViewById(R.id.mapWebView);
+        WebSettings mapSttgs = map.getSettings();
+        mapSttgs.setJavaScriptEnabled(true);
+        Uri buildURI = Uri.parse(URL_MAPS).buildUpon()
+                        .appendPath(ctCod)
+                        .build();
+        map.loadUrl(buildURI.toString());
     }
 
     public void fetchCountry ()
@@ -249,6 +255,7 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
                 i++;
             }
             txtName.setText(name);
+            loadMap(name);
 
             txtTotPop.setText(getString(R.string.ctTotalPop) + ": " + totPop + " habitantes");
             txtCapital.setText(getString(R.string.ctCapital) + ": " + capitalCity);

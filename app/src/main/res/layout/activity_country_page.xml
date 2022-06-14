@@ -34,12 +34,6 @@
                     app:srcCompat="@drawable/br"
                     tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
-                <com.google.android.gms.maps.MapView
-                    android:id="@+id/mapCountryBase"
-                    android:layout_width="match_parent"
-                    android:layout_height="400dp"
-                    android:contentDescription="@string/ctSubMap" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -211,6 +205,13 @@
                     android:textColor="@color/firstColor"
                     android:textSize="30sp"
                     android:textStyle="bold" />
+
+                <WebView
+                    android:id="@+id/mapWebView"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp">
+
+                </WebView>
 
             </LinearLayout>
 
