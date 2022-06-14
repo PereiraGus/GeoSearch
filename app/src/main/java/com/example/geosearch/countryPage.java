@@ -124,9 +124,9 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
             String name = null;
             String totalArea = null;
             String region = null;
-            String langs = null;
+            String langs = "";
             String capitalCity = null;
-            String currency = null;
+            String currency = "";
             String historic = null;
             while(itemsArray.length() > i)
             {
@@ -145,28 +145,20 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
                     name = nome.getString("abreviado");
                     totalArea = area.getString("total") + " " + unidade.getString("símbolo");
                     region = regiao.getString("nome");
-                    for(i = 0; linguas.length() >= i; i++)
+                    String comma = "";
+                    for(i = 0; linguas.length() > i; i++)
                     {
-                        if(linguas.length() > i)
-                        langs = langs + linguas.getJSONObject(i).getString("nome") + ", ";
-                        if(linguas.length() == i)
-                        {
-                            langs = langs + linguas.getJSONObject(i).getString("nome");
-                        }
+                        langs = langs + linguas.getJSONObject(i).getString("nome") + comma;
+                        comma = ", ";
                     }
                     capitalCity = capital.getString("nome");
-                    for (i = 0; monetario.length() >= i; i++)
+                    comma = "";
+                    for (i = 0; monetario.length() > i; i++)
                     {
-                        if(monetario.length() > i)
-                            currency = currency + monetario.getJSONObject(i).getString("nome") +
+                        currency = currency + monetario.getJSONObject(i).getString("nome") +
                                     " (" + monetario.getJSONObject(i).getJSONObject("id").getString("ISO-4217-ALPHA") +
-                                    "), ";
-                        if(monetario.length() == i)
-                        {
-                            currency = currency + linguas.getJSONObject(i).getString("nome") +
-                                    " (" + monetario.getJSONObject(i).getJSONObject("id").getString("ISO-4217-ALPHA") +
-                                    ") ";
-                        }
+                                    ")" + comma;
+                        comma = ", ";
                     }
                     historic = country.getString("historico");
                 }
@@ -178,8 +170,8 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
             txtName.setText(name);
 
             //txtTotPop.setText();
-            txtCapital.setText(R.string.ctCapital + ": " + capitalCity);
-            txtLangs.setText(R.string.ctLangs + ": " + langs);
+            txtCapital.setText(getString(R.string.ctCapital) + ": " + capitalCity);
+            txtLangs.setText(getString(R.string.ctLangs) + ": " + langs);
             //txtHDI.setText();
 
             /*txtDens.setText();
@@ -187,10 +179,10 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
             txtPopUrban.setText();
             txtLifeExpec.setText();*/
 
-            txtRegion.setText(R.string.ctRegion + ": " + region);
-            txtArea.setText(R.string.ctTotalArea + ": " + totalArea);
+            txtRegion.setText(getString(R.string.ctRegion) + ": " + region);
+            txtArea.setText(getString(R.string.ctTotalArea) + ": " + totalArea);
 
-            txtCrrc.setText(R.string.ctCurrency + ": " + currency);
+            txtCrrc.setText(getString(R.string.ctCurrency) + ": " + currency);
             //txtGDPB.setText();
             //txtGDPC.setText();
 

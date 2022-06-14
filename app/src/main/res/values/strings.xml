@@ -41,29 +41,29 @@
     <!--Página do país e JSON-->
     <string name="ctTitlePlaceholder">Carregando...</string>
 
-    <string name="ctName">Nome:</string>
-    <string name="ctInit">Abreviação:</string>
+    <string name="ctName">Nome</string>
+    <string name="ctInit">Abreviação</string>
 
     <string name="ctBtnSave">Salvar</string>
-    <string name="ctCapital">Capital:</string>
-    <string name="ctLangs">Idiomas:</string>
-    <string name="ctTotalPop">População total:</string>
-    <string name="ctHDI">IDH:</string>
+    <string name="ctCapital">Capital</string>
+    <string name="ctLangs">Idiomas</string>
+    <string name="ctTotalPop">População total</string>
+    <string name="ctHDI">IDH</string>
 
     <string name="ctSubPopulation">População</string>
-    <string name="ctDemoDesi">Densidade demográfica:</string>
-    <string name="ctPopRural">População Rural:</string>
-    <string name="ctPopUrban">População Urbana:</string>
-    <string name="ctLifeExpect">Expectativa de vida:</string>
+    <string name="ctDemoDesi">Densidade demográfica</string>
+    <string name="ctPopRural">População Rural</string>
+    <string name="ctPopUrban">População Urbana</string>
+    <string name="ctLifeExpect">Expectativa de vida</string>
 
     <string name="ctSubFisiology">Fisiologia</string>
-    <string name="ctRegion">Região:</string>
-    <string name="ctTotalArea">Área total:</string>
+    <string name="ctRegion">Região</string>
+    <string name="ctTotalArea">Área total</string>
 
     <string name="ctSubEconomy">Economia</string>
-    <string name="ctCurrency">Moeda:</string>
-    <string name="ctGDPBrute">PIB Bruto:</string>
-    <string name="ctGDPCapita">PIB Per capita:</string>
+    <string name="ctCurrency">Moeda</string>
+    <string name="ctGDPBrute">PIB Bruto</string>
+    <string name="ctGDPCapita">PIB Per capita</string>
 
     <string name="ctSubMap">Mapa</string>
 
