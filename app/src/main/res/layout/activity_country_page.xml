@@ -251,7 +251,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btBack"
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:layout_weight="1"
@@ -261,6 +261,7 @@
             android:drawableTint="@color/background"
             android:drawableTintMode="add"
             android:foregroundTint="@color/background"
+            android:onClick="backToMenu"
             app:iconTint="@color/background"
             app:rippleColor="@color/background"
             app:strokeColor="@color/background"

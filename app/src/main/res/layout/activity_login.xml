@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".searchResult">
+    tools:context=".signIn">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/btBack"
+            android:id="@+id/btnLBack"
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:layout_weight="1"
@@ -29,31 +29,70 @@
             android:drawableTint="@color/background"
             android:drawableTintMode="add"
             android:foregroundTint="@color/background"
+            android:onClick="backToMenu"
             app:iconTint="@color/background"
             app:rippleColor="@color/background"
             app:strokeColor="@color/background"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <TextView
-            android:id="@+id/txtSiTitle"
+            android:id="@+id/txtLTitle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="Brasil"
+            android:text="@string/lTitle"
             android:textColor="@color/background"
-            android:textSize="40sp" />
+            android:textSize="30sp" />
 
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="366dp"
-        android:layout_height="480dp"
-        android:background="@color/secondColor"
-        android:contextClickable="true"
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:backgroundTint="@color/background"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.0">
+
+        <EditText
+            android:id="@+id/txtLNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:ems="10"
+            android:hint="@string/slName"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/firstColor"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/txtLSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:ems="10"
+            android:hint="@string/slPassw"
+            android:inputType="textPassword"
+            android:textColorHint="@color/firstColor"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="250dp"
+            android:layout_height="80dp"
+            android:backgroundTint="@color/secondColor"
+            android:text="@string/btnLogIn"
+            android:textSize="20sp"
+            app:cornerRadius="0dp" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

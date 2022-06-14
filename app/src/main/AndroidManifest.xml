@@ -17,6 +17,12 @@
         android:theme="@style/Theme.GeoSearch"
         tools:targetApi="31">
         <activity
+            android:name=".login"
+            android:exported="false" />
+        <activity
+            android:name=".signIn"
+            android:exported="false" />
+        <activity
             android:name=".searchResult"
             android:exported="false" />
         <activity

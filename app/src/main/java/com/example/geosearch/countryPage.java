@@ -6,34 +6,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.MarkerOptions;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.net.URI;
-import java.net.URL;
-import java.util.Calendar;
-import java.util.Locale;
 
 public class countryPage extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Bundle>{
     private static final String URL_MAPS = "https://www.google.com/maps/place";
@@ -101,6 +88,11 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
             getSupportLoaderManager().initLoader(0,null,this);
         }
         fetchCountry();
+    }
+
+    public void backToMenu (View view){
+        Intent intent = new Intent(getApplicationContext(), mainMenu.class);
+        startActivity(intent);
     }
 
     public void loadMap(String ctName){

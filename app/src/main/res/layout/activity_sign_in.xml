@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".signIn">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:background="@color/secondColor"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btnSiBack"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/back_arrow"
+            android:backgroundTint="@color/background"
+            android:backgroundTintMode="add"
+            android:drawableTint="@color/background"
+            android:drawableTintMode="add"
+            android:foregroundTint="@color/background"
+            app:iconTint="@color/background"
+            app:rippleColor="@color/background"
+            app:strokeColor="@color/background"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txtSiTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/sTitle"
+            android:textColor="@color/background"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:backgroundTint="@color/background"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.0">
+
+        <EditText
+            android:id="@+id/txtSNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:ems="10"
+            android:hint="@string/slName"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/firstColor"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/txtSPais"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:ems="10"
+            android:hint="@string/sCount"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/firstColor"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/txtSSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:ems="10"
+            android:hint="@string/slPassw"
+            android:inputType="textPassword"
+            android:textColorHint="@color/firstColor"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btnSignIn"
+            android:layout_width="250dp"
+            android:layout_height="80dp"
+            android:backgroundTint="@color/secondColor"
+            android:onClick="backToMenu"
+            android:text="@string/btnSignIn"
+            android:textSize="20sp"
+            app:cornerRadius="0dp" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
