@@ -34,6 +34,12 @@
                     app:srcCompat="@drawable/br"
                     tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
+                <com.google.android.gms.maps.MapView
+                    android:id="@+id/mapCountryBase"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:contentDescription="@string/ctSubMap" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -206,11 +212,6 @@
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
-                <com.google.android.gms.maps.MapView
-                    android:id="@+id/mapView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -224,7 +225,11 @@
                     android:layout_height="wrap_content"
                     android:text="@string/ctSubHistory"
                     android:textColor="@color/black"
-                    android:textSize="30sp" />
+                    android:textSize="20sp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
             </LinearLayout>
 
         </LinearLayout>
@@ -262,12 +267,12 @@
             android:id="@+id/txtCtTitle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:text="@string/ctTitlePlaceholder"
             android:textColor="@color/background"
-            android:textSize="40sp" />
+            android:textSize="30sp" />
 
     </LinearLayout>
 

@@ -13,13 +13,19 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.MarkerOptions;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Calendar;
 
-public class countryPage extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Bundle> {
+public class countryPage extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Bundle>,
+        OnMapReadyCallback {
     private TextView txtName;
 
     private TextView txtTotPop;
@@ -75,7 +81,17 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
             getSupportLoaderManager().initLoader(0,null,this);
         }
 
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.mapCountryBase);
+        mapFragment.getMapAsync(this);
+
         fetchCountry();
+    }
+
+    @Override
+    public void onMapReady(@NonNull GoogleMap googleMap) {
+        /*googleMap.addMarker(new MarkerOptions()
+                .location)*/
     }
 
     public void fetchCountry ()
