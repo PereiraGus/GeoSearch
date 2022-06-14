@@ -1,7 +1,10 @@
 package com.example.geosearch;
 
 import android.net.Uri;
+import android.os.Bundle;
 import android.util.Log;
+
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -21,7 +24,8 @@ public class networkUtils {
     private static final String COUNTRY_QUERY = "/";
     String countryJSON = null;
     static String url = null;
-    static String searchCountry(String query) {
+
+    static Bundle searchCountry(String query) {
         HttpURLConnection conexao = null;
         BufferedReader reader = null;
         String countryJSON = null;
@@ -59,8 +63,47 @@ public class networkUtils {
         finally {
             conexao.disconnect();
         }
-        //Log.d("Url da requisição:", url);
-        //Log.d("Dados da requisição:", countryJSON.toString());
-        return countryJSON;
+
+        conexao = null;
+        reader = null;
+        String socioEcoJSON = null;
+        try {
+            Uri buildURI = Uri.parse(URL_COUNTRY).buildUpon()
+                    .appendPath(query)
+                    .appendPath("indicadores")
+                    .build();
+            URL requestURL = new URL(buildURI.toString());
+            url = buildURI.toString();
+            conexao = (HttpURLConnection) requestURL.openConnection();
+            conexao.setRequestMethod("GET");
+            conexao.connect();
+
+            InputStream inputStream = conexao.getInputStream();
+            reader = new BufferedReader(new InputStreamReader(inputStream));
+
+            StringBuilder builder = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                builder.append(line);
+                builder.append("/n");
+            }
+            if (builder.length() == 0) {
+                return null;
+            }
+            socioEcoJSON = builder.toString();
+        } catch (ProtocolException e) {
+            e.printStackTrace();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            conexao.disconnect();
+        }
+        Bundle fullData = new Bundle();
+        fullData.putString("socioEco",socioEcoJSON);
+
+        fullData.putString("country",countryJSON);
+        return fullData;
     }
 }

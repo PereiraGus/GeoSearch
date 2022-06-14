@@ -11,19 +11,15 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.renderscript.ScriptGroup;
-import android.util.Log;
-import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.lang.reflect.Array;
+import java.util.Calendar;
 
-public class countryPage extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
+public class countryPage extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Bundle> {
     private TextView txtName;
 
     private TextView txtTotPop;
@@ -107,7 +103,7 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
 
     @NonNull
     @Override
-    public Loader<String> onCreateLoader(int id, @Nullable Bundle args) {
+    public Loader<Bundle> onCreateLoader(int id, @Nullable Bundle args) {
         String query = "";
         if(args != null)
         {
@@ -117,9 +113,11 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
     }
 
     @Override
-    public void onLoadFinished(@NonNull Loader<String> loader, String data) {
+    public void onLoadFinished(@NonNull Loader<Bundle> loader, Bundle data) {
         try{
-            JSONArray itemsArray = new JSONArray(data);
+            Bundle allData = data;
+            JSONArray countryArray = new JSONArray(allData.getString("country"));
+            JSONArray socioEcoArray = new JSONArray(allData.getString("socioEco"));
             int i = 0;
             String name = null;
             String totalArea = null;
@@ -128,19 +126,18 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
             String capitalCity = null;
             String currency = "";
             String historic = null;
-            while(itemsArray.length() > i)
+            while(countryArray.length() > i)
             {
-                JSONObject country = itemsArray.getJSONObject(i);
-                JSONObject nome = country.getJSONObject("nome");
-                JSONObject area = country.getJSONObject("area");
-                    JSONObject unidade = area.getJSONObject("unidade");
-                JSONObject localizacao = country.getJSONObject("localizacao");
-                    JSONObject regiao = localizacao.getJSONObject("sub-regiao");
-                JSONArray linguas = country.getJSONArray("linguas");
-                JSONObject governo = country.getJSONObject("governo");
-                    JSONObject capital = governo.getJSONObject("capital");
-                JSONArray monetario = country.getJSONArray("unidades-monetarias");
-
+                JSONObject country = countryArray.getJSONObject(i);
+                    JSONObject nome = country.getJSONObject("nome");
+                    JSONObject area = country.getJSONObject("area");
+                        JSONObject unidade = area.getJSONObject("unidade");
+                    JSONObject localizacao = country.getJSONObject("localizacao");
+                        JSONObject regiao = localizacao.getJSONObject("sub-regiao");
+                    JSONArray linguas = country.getJSONArray("linguas");
+                    JSONObject governo = country.getJSONObject("governo");
+                        JSONObject capital = governo.getJSONObject("capital");
+                    JSONArray monetario = country.getJSONArray("unidades-monetarias");
                 try{
                     name = nome.getString("abreviado");
                     totalArea = area.getString("total") + " " + unidade.getString("símbolo");
@@ -167,24 +164,92 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
                 }
                 i++;
             }
+            String totPop = null;
+            String idh = null;
+            String densDemo = null;
+            String popRural = null;
+            String popUrb = null;
+            String lifeExpec = null;
+            String pibB = null;
+            String pibPC = null;
+            i = 0;
+            while (i == 0)
+            {
+                JSONObject popData = socioEcoArray.getJSONObject(26);
+                    JSONArray popPaises = popData.getJSONArray("series");
+                        JSONObject popPais = popPaises.getJSONObject(0);
+                            JSONArray popPorAno = popPais.getJSONArray("serie");
+                                JSONObject popAtualizada = popPorAno.getJSONObject(popPorAno.length() - 3);
+                JSONObject idhData = socioEcoArray.getJSONObject(11);
+                    JSONArray idhPaises = idhData.getJSONArray("series");
+                        JSONObject idhPais = idhPaises.getJSONObject(0);
+                            JSONArray idhPorAno = idhPais.getJSONArray("serie");
+                                JSONObject idhAtualizado = idhPorAno.getJSONObject(idhPorAno.length() - 3);
+                JSONObject densData = socioEcoArray.getJSONObject(21);
+                    JSONArray densPaises = densData.getJSONArray("series");
+                        JSONObject densPais = densPaises.getJSONObject(0);
+                            JSONArray densPorAno = densPais.getJSONArray("serie");
+                                JSONObject densAtualizado = densPorAno.getJSONObject(densPorAno.length() - 3);
+                JSONObject popRData = socioEcoArray.getJSONObject(24);
+                    JSONArray popRPaises = popRData.getJSONArray("series");
+                        JSONObject popRPais = popRPaises.getJSONObject(0);
+                            JSONArray popRPorAno = popRPais.getJSONArray("serie");
+                                JSONObject popRAtualizado = popRPorAno.getJSONObject(popRPorAno.length() - 3);
+                JSONObject popUData = socioEcoArray.getJSONObject(25);
+                    JSONArray popUPaises = popUData.getJSONArray("series");
+                        JSONObject popUPais = popUPaises.getJSONObject(0);
+                            JSONArray popUPorAno = popUPais.getJSONArray("serie");
+                                JSONObject popUAtualizado = popUPorAno.getJSONObject(popUPorAno.length() - 3);
+                JSONObject lifeExData = socioEcoArray.getJSONObject(10);
+                    JSONArray lifeExPaises = lifeExData.getJSONArray("series");
+                        JSONObject lifeExPais = lifeExPaises.getJSONObject(0);
+                            JSONArray lifeExPorAno = lifeExPais.getJSONArray("serie");
+                                JSONObject lifeExAtualizado = lifeExPorAno.getJSONObject(lifeExPorAno.length() - 3);
+                JSONObject pibBData = socioEcoArray.getJSONObject(9);
+                    JSONArray pibBPaises = pibBData.getJSONArray("series");
+                        JSONObject pibBPais = pibBPaises.getJSONObject(0);
+                            JSONArray pibBPorAno = pibBPais.getJSONArray("serie");
+                                JSONObject pibBAtualizado = pibBPorAno.getJSONObject(pibBPorAno.length() - 3);
+                JSONObject pibPCData = socioEcoArray.getJSONObject(5);
+                    JSONArray pibPCPaises = pibPCData.getJSONArray("series");
+                        JSONObject pibPCPais = pibPCPaises.getJSONObject(0);
+                            JSONArray pibPCPorAno = pibPCPais.getJSONArray("serie");
+                                JSONObject pibPCAtualizado = pibPCPorAno.getJSONObject(pibPCPorAno.length() - 3);
+
+                                try{
+
+                    totPop = popAtualizada.getString("2019");
+                    idh = idhAtualizado.getString("2019");
+                    densDemo = densAtualizado.getString("2019");
+                    popRural = popRAtualizado.getString("2019");
+                    popUrb= popUAtualizado.getString("2019");
+                    lifeExpec = lifeExAtualizado.getString("2019");
+                    pibB = pibBAtualizado.getString("2019");
+                    pibPC = pibPCAtualizado.getString("2019");
+                }
+                catch (JSONException e){
+                    e.printStackTrace();
+                }
+                i++;
+            }
             txtName.setText(name);
 
-            //txtTotPop.setText();
+            txtTotPop.setText(getString(R.string.ctTotalPop) + ": " + totPop + " habitantes");
             txtCapital.setText(getString(R.string.ctCapital) + ": " + capitalCity);
             txtLangs.setText(getString(R.string.ctLangs) + ": " + langs);
-            //txtHDI.setText();
+            txtHDI.setText(getString(R.string.ctHDI) + ": " + idh);
 
-            /*txtDens.setText();
-            txtPopRural.setText();
-            txtPopUrban.setText();
-            txtLifeExpec.setText();*/
+            txtDens.setText(getString(R.string.ctDemoDesi) + ": " + densDemo + " hab/km²");
+            txtPopRural.setText(getString(R.string.ctPopRural) + ": " + popRural + "%");
+            txtPopUrban.setText(getString(R.string.ctPopUrban) + ": " + popUrb + "%");
+            txtLifeExpec.setText(getString(R.string.ctLifeExpect) + ": " + lifeExpec + " anos");
 
             txtRegion.setText(getString(R.string.ctRegion) + ": " + region);
-            txtArea.setText(getString(R.string.ctTotalArea) + ": " + totalArea);
+            txtArea.setText(getString(R.string.ctTotalArea) + ": " + totalArea + "km²");
 
             txtCrrc.setText(getString(R.string.ctCurrency) + ": " + currency);
-            //txtGDPB.setText();
-            //txtGDPC.setText();
+            txtGDPB.setText(getString(R.string.ctGDPBrute) + ": " + pibB);
+            txtGDPC.setText(getString(R.string.ctGDPCapita) + ": " + pibPC);
 
             txtHist.setText(historic);
         }
@@ -195,7 +260,7 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
     }
 
     @Override
-    public void onLoaderReset(@NonNull Loader<String> loader) {
+    public void onLoaderReset(@NonNull Loader<Bundle> loader) {
 
     }
 }
