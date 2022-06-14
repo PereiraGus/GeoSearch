@@ -52,8 +52,6 @@ public class mainMenu extends AppCompatActivity implements BottomNavigationView.
         switch(item.getItemId())
         {
             case R.id.home:
-                Intent intentH = new Intent(getApplicationContext(), mainMenu.class);
-                startActivity(intentH);
                 return true;
             case R.id.map:
                     Intent intentM = new Intent(getApplicationContext(), selectionMap.class);
