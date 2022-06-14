@@ -10,20 +10,19 @@
         android:id="@+id/linearLayout"
         style="@style/Theme.GeoSearch"
         android:layout_width="match_parent"
-        android:layout_height="277dp"
+        android:layout_height="200dp"
         android:background="@color/firstColor"
+        android:gravity="center"
         android:orientation="vertical"
         android:paddingLeft="20dp"
-        android:paddingTop="10dp"
         android:paddingRight="20dp"
-        android:paddingBottom="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -79,7 +78,8 @@
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="20dp"
-        android:visibility="invisible"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
@@ -185,6 +185,7 @@
         android:gravity="center"
         android:orientation="vertical"
         android:paddingHorizontal="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
@@ -243,7 +244,6 @@
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
         android:layout_height="110dp"
-        android:layout_marginBottom="4dp"
         android:background="@color/firstColor"
         app:itemIconSize="45dp"
         app:itemIconTint="@color/secondColor"

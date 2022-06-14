@@ -29,6 +29,7 @@
             android:drawableTint="@color/background"
             android:drawableTintMode="add"
             android:foregroundTint="@color/background"
+            android:onClick="backToProfile"
             app:iconTint="@color/background"
             app:rippleColor="@color/background"
             app:strokeColor="@color/background"

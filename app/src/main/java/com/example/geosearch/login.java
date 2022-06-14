@@ -14,8 +14,8 @@ public class login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
     }
 
-    public void backToMenu (View view){
-        Intent intent = new Intent(getApplicationContext(), mainMenu.class);
+    public void backToProfile (View view){
+        Intent intent = new Intent(getApplicationContext(), profileActivity.class);
         startActivity(intent);
     }
 }

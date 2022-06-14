@@ -32,10 +32,12 @@ public class profileActivity extends AppCompatActivity implements BottomNavigati
 
     public void goToSignIn (View view){
         Intent intent = new Intent(getApplicationContext(),signIn.class);
+        startActivity(intent);
     }
 
     public void goToLogin (View view){
         Intent intent = new Intent(getApplicationContext(),login.class);
+        startActivity(intent);
     }
 
     @Override
