@@ -4,17 +4,25 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ClipData;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import org.xmlpull.v1.XmlPullParser;
 
 import java.util.concurrent.ExecutionException;
 
@@ -46,7 +54,41 @@ public class mainMenu extends AppCompatActivity implements BottomNavigationView.
                 return false;
             }
         });
+        /*
+        LayoutInflater inflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        ViewGroup vg = (ViewGroup) findViewById(R.id.countriesTable);
+        int i = 0;
+        while(4 > i){
+            TableRow tr = new TableRow(this);
+
+            TextView product = new TextView(mainMenu.this);
+            product.setText("País");
+            tr.addView(product);
+
+            inflater.inflate(tr,vg);
+        }*/
     }
+
+    public void goToBrazil(View view){
+        Intent intent = new Intent (getApplicationContext(),countryPage.class);
+        intent.putExtra("query","br");
+        startActivity(intent);
+    }
+    public void goToNorway(View view){
+        Intent intent = new Intent (getApplicationContext(),countryPage.class);
+        intent.putExtra("query","no");
+        startActivity(intent);
+    }public void goToAustralia(View view){
+        Intent intent = new Intent (getApplicationContext(),countryPage.class);
+        intent.putExtra("query","au");
+        startActivity(intent);
+    }public void goToFrance(View view){
+        Intent intent = new Intent (getApplicationContext(),countryPage.class);
+        intent.putExtra("query","fr");
+        startActivity(intent);
+    }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId())

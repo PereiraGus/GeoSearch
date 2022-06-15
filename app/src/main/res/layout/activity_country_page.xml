@@ -6,7 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".countryPage">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragContain"
+        android:name="com.example.geosearch.error"
+        android:layout_width="300dp"
+        android:layout_height="450dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_error" />
+
     <ScrollView
+        android:id="@+id/scrollCountry"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

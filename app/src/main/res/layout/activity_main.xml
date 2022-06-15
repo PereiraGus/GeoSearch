@@ -75,120 +75,76 @@
             android:textColor="@color/black"
             android:textSize="34sp" />
 
-        <HorizontalScrollView
+        <TableLayout
+            android:id="@+id/countriesTable"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="180dp"
+                    android:layout_height="150dp"
+                    android:background="@color/background"
+                    android:contentDescription="@string/profLoc"
+                    android:onClick="goToBrazil"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/br"
+                    tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
 
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:contentDescription="@string/mainDescContryImg"
-                        android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/br"
-                        tools:ignore="ImageContrastCheck" />
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content" />
 
-                    <Space
-                        android:layout_width="15dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                <ImageButton
+                    android:id="@+id/imageButton2"
+                    android:layout_width="180dp"
+                    android:layout_height="150dp"
+                    android:background="@color/background"
+                    android:contentDescription="@string/profLoc"
+                    android:onClick="goToNorway"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/no"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
-                    <ImageView
-                        android:id="@+id/imageView2"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:contentDescription="@string/mainDescContryImg"
-                        android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/no" />
+            </TableRow>
 
-                    <Space
-                        android:layout_width="15dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-                    <ImageView
-                        android:id="@+id/imageView3"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:contentDescription="@string/mainDescContryImg"
-                        android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/mk" />
+                <ImageButton
+                    android:id="@+id/imageButton3"
+                    android:layout_width="180dp"
+                    android:layout_height="150dp"
+                    android:background="@color/background"
+                    android:contentDescription="@string/profLoc"
+                    android:onClick="goToFrance"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/fr"
+                    tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
 
-                </LinearLayout>
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content" />
 
-            </LinearLayout>
-        </HorizontalScrollView>
+                <ImageButton
+                    android:id="@+id/imageButton4"
+                    android:layout_width="180dp"
+                    android:layout_height="150dp"
+                    android:background="@color/background"
+                    android:contentDescription="@string/profLoc"
+                    android:onClick="goToAustralia"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/au"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            </TableRow>
 
-        <TextView
-            android:id="@+id/txtMainSubtit2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/mainSubtit2"
-            android:textColor="@color/black"
-            android:textSize="24sp" />
-
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/mainBtnCur1"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/currency_button"
-                        android:text="$"
-                        android:textSize="50sp"
-                        tools:ignore="TextContrastCheck" />
-
-                    <Space
-                        android:layout_width="15dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-
-                    <Button
-                        android:id="@+id/mainBtnCur2"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/currency_button"
-                        android:text="$"
-                        android:textSize="50sp"
-                        tools:ignore="TextContrastCheck" />
-
-                    <Space
-                        android:layout_width="15dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-        </HorizontalScrollView>
+        </TableLayout>
 
     </LinearLayout>
 

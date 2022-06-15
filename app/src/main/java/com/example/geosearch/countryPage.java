@@ -3,6 +3,9 @@ package com.example.geosearch;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentContainer;
+import androidx.fragment.app.FragmentManager;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
@@ -16,6 +19,7 @@ import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -115,7 +119,16 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
         }
         if(net != null && net.isConnected()){
             if(query.length() == 0){
-                //CASO A QUERY SEJA VAZIA
+                ScrollView scroll = new ScrollView(this);
+                scroll = (ScrollView) findViewById(R.id.scrollCountry);
+                scroll.setVisibility(View.GONE);
+
+                Bundle args = new Bundle();
+                args.putString("error","empty");
+
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.fragContain, error.class, args)
+                        .commit();
             }
             else{
                 Bundle queryBundle = new Bundle();
@@ -124,7 +137,16 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
             }
         }
         else{
-            //SEM INTERNET
+            ScrollView scroll = new ScrollView(this);
+            scroll = (ScrollView) findViewById(R.id.scrollCountry);
+            scroll.setVisibility(View.GONE);
+
+            Bundle args = new Bundle();
+            args.putString("error","empty");
+
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.fragContain, error.class, args)
+                    .commit();
         }
     }
 

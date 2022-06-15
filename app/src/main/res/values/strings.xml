@@ -21,7 +21,7 @@
 
     <!--Perfil-->
     <string name="profName">Nome</string>
-    <string name="profLoc">📍País</string>
+    <string name="profLoc">País</string>
     <string name="profPassw">Senha</string>
     <string name="profDescImg">Foto de perfil</string>
     <string name="profAlter">Alterar</string>
@@ -95,4 +95,12 @@
     <string name="btnSignIn">Criar</string>
     <string name="btnLogIn">Logar</string>
 
+    <!--Erros!-->
+    <string name="errorTitle">Erro!</string>
+
+    <string name="errorDefault">Ocorreu um erro ao processar sua requisição. Por favor, tente novamente.</string>
+    <string name="errorConnec">Não foi possível se conectar a internet! Por favor, verifique sua conexão.</string>
+    <string name="errorFind">Não foi possível encontrar nenhum país a partir do ID pesquisa. Por favor, tente novamente</string>
+
+    <string name="btnErrorBack">Voltar ao menu principal</string>
 </resources>
