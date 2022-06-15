@@ -28,6 +28,7 @@ import org.json.JSONObject;
 
 public class countryPage extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Bundle>{
     private static final String URL_MAPS = "https://www.google.com/maps/place";
+    private static final String URL_FLAGS = "https://countryflagsapi.com/png";
     private DatabaseHelper db;
 
     private Button btnSave;
@@ -109,6 +110,16 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
         map.loadUrl(buildURI.toString());
     }
 
+    public void loadFlag(String ctInit){
+        WebView flag = (WebView) findViewById(R.id.ctWebView);
+        WebSettings mapSttgs = flag.getSettings();
+        mapSttgs.setBuiltInZoomControls(true);
+        Uri buildURI = Uri.parse(URL_FLAGS).buildUpon()
+                        .appendPath(ctInit)
+                        .build();
+        flag.loadUrl(buildURI.toString());
+    }
+
     public void fetchCountry ()
     {
         ConnectivityManager checkConnec = (ConnectivityManager)
@@ -119,10 +130,6 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
         }
         if(net != null && net.isConnected()){
             if(query.length() == 0){
-                ScrollView scroll = new ScrollView(this);
-                scroll = (ScrollView) findViewById(R.id.scrollCountry);
-                scroll.setVisibility(View.GONE);
-
                 Bundle args = new Bundle();
                 args.putString("error","empty");
 
@@ -280,6 +287,7 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
             }
             txtName.setText(name);
             loadMap(name);
+            loadFlag(init);
 
             txtTotPop.setText(getString(R.string.ctTotalPop) + ": " + totPop + " habitantes");
             txtCapital.setText(getString(R.string.ctCapital) + ": " + capitalCity);
