@@ -144,10 +144,6 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
             }
         }
         else{
-            ScrollView scroll = new ScrollView(this);
-            scroll = (ScrollView) findViewById(R.id.scrollCountry);
-            scroll.setVisibility(View.GONE);
-
             Bundle args = new Bundle();
             args.putString("error","empty");
 

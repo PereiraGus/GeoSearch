@@ -33,7 +33,14 @@
     <string name="profSignIn">Criar perfil</string>
 
     <!--Mapa-->
+    <string name="map">Mapa</string>
     <string name="mapGuide">Clique em um país para visualizar suas informações</string>
+    <string name="mapCurrentLoc">Sua localização</string>
+    <string name="mapNoAdress">Sua localalização não foi encontrada</string>
+    <string name="mapInvalid">Endereço inválido</string>
+    <string name="mapUnavailable">Serviço indisponível</string>
+
+    <string name="mapPermissionDenied">Permissão negado</string>
 
     <!--Pesquisa-->
     <string name="searchResults">Resultados para "x":</string>
