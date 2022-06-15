@@ -101,7 +101,7 @@
             android:layout_width="250dp"
             android:layout_height="80dp"
             android:backgroundTint="@color/secondColor"
-            android:onClick="backToMenu"
+            android:onClick="backToProfile"
             android:text="@string/btnSignIn"
             android:textSize="20sp"
             app:cornerRadius="0dp" />

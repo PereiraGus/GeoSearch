@@ -95,6 +95,17 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
         fetchCountry();
     }
 
+    public void showError(Bundle args){
+        ScrollView scroll = (ScrollView) findViewById(R.id.scrollCountry);
+        scroll.setVisibility(View.GONE);
+
+        View container = (View) findViewById(R.id.fragContain);
+        container.setVisibility(View.VISIBLE);
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.fragContain, error.class,args)
+                .commit();
+    }
+
     public void backToMenu (View view){
         Intent intent = new Intent(getApplicationContext(), mainMenu.class);
         startActivity(intent);
@@ -133,9 +144,7 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
                 Bundle args = new Bundle();
                 args.putString("error","empty");
 
-                getSupportFragmentManager().beginTransaction()
-                        .add(R.id.fragContain, error.class, args)
-                        .commit();
+                showError(args);
             }
             else{
                 Bundle queryBundle = new Bundle();
@@ -147,9 +156,7 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
             Bundle args = new Bundle();
             args.putString("error","empty");
 
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.fragContain, error.class, args)
-                    .commit();
+            showError(args);
         }
     }
 
@@ -310,7 +317,11 @@ public class countryPage extends AppCompatActivity implements LoaderManager.Load
             db.insertCountry(ct);
         }
         catch (JSONException e) {
-            //FAZER OPÇÃO QUE MOSTRE PARA O USUARIO QUE DEU ERRO
+            Bundle args = new Bundle();
+            args.putString("error","empty");
+
+            showError(args);
+
             e.printStackTrace();
         }
     }
