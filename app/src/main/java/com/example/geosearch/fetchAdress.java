@@ -17,7 +17,8 @@ public class fetchAdress extends AsyncTask<Location, Void, String[]> {
     private Context mContext;
     private OnTaskCompleted mListener;
 
-    fetchAdress(Context applicationContext, OnTaskCompleted listenser){
+    fetchAdress(Context applicationContext, OnTaskCompleted
+            listenser){
         mContext = applicationContext;
         mListener = listenser;
     }
